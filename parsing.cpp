@@ -19,7 +19,7 @@ int main()
         cin.getline(buffer, 1024, '\n');
 
         //This is a duplicate of the data - deep copy
-        temp = stringdup(buffer);
+        temp = strdup(buffer);
 
         //It is now destroyed by strtok
         t = strtok(temp, " ");
@@ -33,7 +33,17 @@ int main()
             t = strtok(NULL, 0);
         }
 
-        for(vector<string>::iterator iterator = tokens.begin())
+        for(vector<string>::iterator iterator = tokens.begin(); iterator != tokens.end(); iterator++)
+        {
+            cout << " " << *iterator << endl;
+            if(strcmp(iterator->c_str(), "Quit") == 0)
+            {
+                quit = true;
+            }
+        }
+
+        //Return memory to system
+        tokens.clear();
     }
 
 
