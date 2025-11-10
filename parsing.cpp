@@ -33,17 +33,30 @@ int main()
             t = strtok(NULL, 0);
         }
 
-        for(vector<string>::iterator iterator = tokens.begin(); iterator != tokens.end(); iterator++)
+
+
+        // for(vector<string>::iterator iterator = tokens.begin(); iterator != tokens.end(); iterator++)
+        // {
+        //     cout << " " << *iterator << endl;
+        //     if(strcmp(iterator->c_str(), "Quit") == 0)
+        //     {
+        //         quit = true;
+        //     }
+        // }
+
+        vector<string>::iterator iterator;
+        iterator = tokens.begin();
+        if(strcmp(iterator->c_str(), "Length") == 0)
         {
-            cout << " " << *iterator << endl;
-            if(strcmp(iterator->c_str(), "Quit") == 0)
-            {
-                quit = true;
-            }
+            ++iterator;
+            ++iterator;
+            cout << "Length is: " << (iterator->c_str()) << endl;
         }
 
         //Return memory to system
         tokens.clear();
+
+        std::cout << quit << std::endl;
     }
 
 
